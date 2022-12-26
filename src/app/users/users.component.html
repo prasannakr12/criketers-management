@@ -1,0 +1,25 @@
+<h2>Users List</h2>
+<table class="table table-bordered mt-3">
+  <tr class="bg-dark">
+
+    <th> ID</th>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Salary</th>
+    <th>City</th>
+    <th>DOB</th>
+
+  </tr>
+
+  <tr *ngFor="let user of users">
+    <td> <a [routerLink]="['/user',user.id]">{{ user.id}}</a></td>
+    <td> {{user.fname }}</td>
+    <td> {{user.lname }}</td>
+    <td> {{user.salary | currency:'INR'}}</td>
+    <td> {{user.city}}</td>
+    <td> {{user.dob | date}}</td>
+  </tr>
+</table>
+<div >
+  <button routerLink="/add-user">Add User</button>
+</div>

@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+.headerlogo {
+    height: 40px;
+}
+
+.navbar a {
+    color: rgb(242, 244, 233);
+}
+
+.bg-dark {
+    color: white;
+}

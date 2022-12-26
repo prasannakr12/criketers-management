@@ -1,0 +1,52 @@
+<div class="n2">
+   <h1 *ngIf ="!editMode" >{{title}}</h1>
+   <div *ngIf ="editMode">
+    <input type="text"[(ngModel)]="title">
+
+   </div>
+    
+</div>
+   
+
+<table class="table table-borderd mt-3">
+    <tr class="bg-dark">
+
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>City</th>
+        <th>DOB</th>
+
+    </tr>
+    <tr>
+        <td> {{user.id}}</td>
+        <td> {{user.fname }}</td>
+        <td> {{user.lname }}</td>
+        <td> {{user.city}}</td>
+        <td> {{user.dob | date}}</td>
+    </tr>
+</table>
+<!-- <div>
+    <ul class="nav nav-tab">
+
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/address">Address</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/details">Details</a>
+        </li>
+
+    </ul>
+    <router-outlet></router-outlet>
+</div> -->
+
+<div>
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <button class="nav-link" routerLink="address">Address</button>
+        </li>
+    </ul>
+    <router-outlet></router-outlet>
+    <button (click)="appendQueryParam()">Edit</button>
+    <button (click)="editMode = false" [routerLink]="['/user', user.id]">Update</button>
+</div>
